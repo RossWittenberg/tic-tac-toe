@@ -3,8 +3,6 @@ require_relative 'game'
 
 class Player
 	attr_accessor :name, :squares, :symbol
-
-	check_for_row_proc = Proc.new{}
 	def initialize(name, symbol)
 		@name = name
 		@symbol = symbol
