@@ -21,7 +21,6 @@ class Game
 	
   	def play
 		self.who_goes_first
-		
   		while self.victor == nil && !self.board.is_full?
   			if current_player == 1
   				self.players.first.take_turn(self)
@@ -30,9 +29,11 @@ class Game
   			end
   		end
   		if self.board.is_full?
+  			Player.all.each { |player| player.squares = [] }
   			puts "It's a Draw"
 	  		puts "Let's Play again!"
   		else
+  			Player.all.each { |player| player.squares = [] }
 	  		puts "#{self.victor.name} wins!"
 	  		puts "Let's Play again!"
   		end

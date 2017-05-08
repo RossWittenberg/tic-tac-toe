@@ -25,6 +25,7 @@ class Player
 			if active_squares_per_column.count >= winning_threshold
 				game.victory_conditions = true
 				game.victor = self
+				puts "column win!"
 			end
 		end
 	end
@@ -36,6 +37,7 @@ class Player
 			if active_squares_per_row.count >= winning_threshold
 				game.victory_conditions = true
 				game.victor = self
+				puts "row win!"
 			end
 		end
 	end
@@ -54,6 +56,7 @@ class Player
 		if active_squares_on_left_to_right_diag.count >= winning_threshold || active_squares_on_right_to_left_diag.count >= winning_threshold
 			game.victory_conditions = true
 			game.victor = self
+			puts "column win!"
 		end
 	end
 
