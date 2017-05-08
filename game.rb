@@ -29,11 +29,11 @@ class Game
   			end
   		end
   		if self.board.is_full?
-  			Player.all.each { |player| player.squares = [] }
+  			Player.all.each(&:clear_board)
   			puts "It's a Draw"
 	  		puts "Let's Play again!"
   		else
-  			Player.all.each { |player| player.squares = [] }
+  			Player.all.each(&:clear_board)
 	  		puts "#{self.victor.name} wins!"
 	  		puts "Let's Play again!"
   		end
